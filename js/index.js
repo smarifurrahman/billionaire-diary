@@ -37,22 +37,22 @@ const displayTotalTopTen = (total) => {
 }
 
 document.getElementById('btn-technology').addEventListener('click', function () {
-    const url = '../by-industry.html?industry=technology';
+    const url = '../industry.html?industry=technology';
     window.location.href = url;
 });
 
 document.getElementById('btn-finance').addEventListener('click', function () {
-    const url = '../by-industry.html?industry=finance';
+    const url = '../industry.html?industry=finance';
     window.location.href = url;
 });
 
 document.getElementById('btn-fashion').addEventListener('click', function () {
-    const url = '../by-industry.html?industry=fashion';
+    const url = '../industry.html?industry=fashion';
     window.location.href = url;
 });
 
 document.getElementById('btn-investment').addEventListener('click', function () {
-    const url = '../by-industry.html?industry=investment';
+    const url = '../industry.html?industry=investment';
     window.location.href = url;
 });
 
