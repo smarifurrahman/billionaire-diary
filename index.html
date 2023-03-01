@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BILLIONAIRE DIARY</title>
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/aae5e146e7.js" crossorigin="anonymous"></script>
+  <!-- tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0E1B34',
+            secondary: '#D9D9D9',
+          },
+          fontFamily: {
+            primary: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <main class="font-primary">
+    <section class="flex w-full">
+      <div id="control-panel" class="bg-primary w-1/5 px-4 py-5">
+        <div class="flex flex-col items-center justify-center">
+          <img class="mb-10 mt-5 w-1/2" src="./images/logo/logo.svg" alt="">
+          <button class="bg-secondary text-primary font-bold py-2 px-2 w-5/6 mb-3">Top 20 Billionaires</button>
+          <button class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Show All Billionaires</button>
+          <button class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Richest by industry
+            (Technology)</button>
+          <button class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Richest by industry
+            (Finance)</button>
+          <button class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Richest by industry
+            (Fashion)</button>
+          <button class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Richest by industry
+            (Investment)</button>
+        </div>
+      </div>
+      <div id="top-10-panel" class="bg-secondary w-4/5 py-5 px-8">
+        <div>
+          <h2 class="font-bold mb-6">Top 10 Billionaires List !</h2>
+          <table>
+            <thead class="border-b-2 border-primary">
+              <tr>
+                <th class="pb-3 pr-10">Person</th>
+                <th class="pb-3 pr-10">Citizenship</th>
+                <th class="pb-3 pr-10">Industry</th>
+                <th class="pb-3 pr-10">Rank</th>
+                <th class="pb-3 ">Wealth</th>
+              </tr>
+            </thead>
+            <tbody id="top-10-tbody" class="border-b-2 border-primary font-light">
+
+            </tbody>
+            <tfoot id="top-10-tfoot">
+              
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- js -->
+  <script src="./js/top10.js"></script>
+</body>
+
+</html>
