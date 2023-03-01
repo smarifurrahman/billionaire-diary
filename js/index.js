@@ -8,7 +8,7 @@ const loadTopTen = async () => {
 const displayTopTen = (persons) => {
     const topTenBody = document.getElementById('top-10-tbody');
     let total = 0;
-    for(const person of persons) {
+    for (const person of persons) {
         const tableRow = document.createElement('tr');
         tableRow.innerHTML = `
         <td class="pr-10 py-1"><i class="fa-solid fa-eye cursor-pointer p-1"></i> ${person.person.name}</td>
@@ -36,6 +36,24 @@ const displayTotalTopTen = (total) => {
     topTenFoot.appendChild(tableRow);
 }
 
-document.getElementById()
+document.getElementById('btn-technology').addEventListener('click', function () {
+    const url = '../by-industry.html?industry=technology';
+    window.location.href = url;
+});
+
+document.getElementById('btn-finance').addEventListener('click', function () {
+    const url = '../by-industry.html?industry=finance';
+    window.location.href = url;
+});
+
+document.getElementById('btn-fashion').addEventListener('click', function () {
+    const url = '../by-industry.html?industry=fashion';
+    window.location.href = url;
+});
+
+document.getElementById('btn-investment').addEventListener('click', function () {
+    const url = '../by-industry.html?industry=investment';
+    window.location.href = url;
+});
 
 loadTopTen();

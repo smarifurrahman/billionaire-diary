@@ -1,5 +1,9 @@
-const loadByIndustry = async () => {
-    const url = 'https://forbes400.onrender.com/api/forbes400/industries/technology';
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const industry = urlParams.get('industry');
+
+const loadByIndustry = async (industry) => {
+    const url = `https://forbes400.onrender.com/api/forbes400/industries/${industry}`;
     const res = await fetch(url);
     const data = await res.json();
     displayByIndustry(data);
@@ -8,7 +12,6 @@ const loadByIndustry = async () => {
 const displayByIndustry = (persons) => {
     const cardContainer = document.getElementById('card-container');
     for (const person of persons) {
-        console.log(person);
         const card = document.createElement('div');
         card.classList.add('bg-primary', 'p-4');
         card.innerHTML = `
@@ -21,8 +24,8 @@ const displayByIndustry = (persons) => {
                 <p class="font-semibold">Citizenship: <span class="font-light">${person.countryOfCitizenship ? person.countryOfCitizenship : 'Not Found'}</span></p>
                 <p class="font-semibold">State: <span class="font-light">${person.state ? person.state : 'Not Found'}</span></p>
                 <p class="font-semibold">City: <span class="font-light">${person.city ? person.city : 'Not Found'}</span></p>
-                <p class="font-semibold">Total Shares: <span class="font-light">${person.financialAssets[0].numberOfShares ? Math.round(person.financialAssets[0].numberOfShares) : 'Not Found'}</span></p>
-                <p class="font-semibold">Share Price: <span class="font-light">$${person.financialAssets[0].sharePrice ? person.financialAssets[0].sharePrice.toFixed(2) : 'Not Found'}</span></p>
+                <p class="font-semibold">Total Shares: <span class="font-light">${person.financialAssets ? Math.round(person.financialAssets[0].numberOfShares) : 'Not Found'}</span></p>
+                <p class="font-semibold">Share Price: <span class="font-light">$${person.financialAssets ? person.financialAssets[0].sharePrice.toFixed(2) : 'Not Found'}</span></p>
             </div>
         </div>
         <p class="mt-3 font-semibold">Source: <span class="font-light">${person.source ? person.source : 'Not Found'}</span></p>
@@ -31,4 +34,13 @@ const displayByIndustry = (persons) => {
     }
 }
 
-loadByIndustry();
+const displayHeading = (industry) => {
+    let industryName = industry.split('');
+    industryName[0] = industryName[0].toUpperCase();
+    industryName = industryName.join('');
+    document.getElementById('industry-name').innerText = industryName;
+}
+
+displayHeading(industry);
+
+loadByIndustry(industry);
