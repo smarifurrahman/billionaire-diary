@@ -19,7 +19,7 @@ const displayByIndustry = (persons) => {
         <h2 class="text-center text-xl mb-5 font-secondary" style="text-shadow: 5px 5px 8px white;">${person.person ? person.person.name : 'Not Found'}</h2>
         <div class="flex">
             <div class="flex justify-center items-center mr-3 w-1/2">
-                <img class="w-full" src="${person.person.squareImage ? person.person.squareImage : emptyString}" alt="person-image">
+                <img class="w-full" src="${person.person.squareImage ? person.person.squareImage : emptyString}" alt="Not Found">
             </div>
             <div class="border-l-2 flex flex-col justify-center py-5 px-3 w-1/2">
                 <p class="font-semibold">Citizenship: <span class="font-light">${person.countryOfCitizenship ? person.countryOfCitizenship : 'Not Found'}</span></p>
