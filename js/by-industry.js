@@ -1,5 +1,5 @@
 const loadTopTen = async () => {
-    const url = 'https://forbes400.onrender.com/api/forbes400?limit=10';
+    const url = 'https://forbes400.onrender.com/api/forbes400/industries/technology';
     const res = await fetch(url);
     const data = await res.json();
     displayTopTen(data);
@@ -22,18 +22,3 @@ const displayTopTen = (persons) => {
     }
     displayTotalTopTen(total);
 }
-
-const displayTotalTopTen = (total) => {
-    const topTenFoot = document.getElementById('top-10-tfoot');
-    const tableRow = document.createElement('tr');
-    tableRow.innerHTML = `
-    <td class="pt-3 pr-10">Total</td>
-    <td class="pt-3 pr-10"></td>
-    <td class="pt-3 pr-10"></td>
-    <td class="pt-3 pr-10"></td>
-    <td class="pt-3 pr-10">$${total.toFixed(2)}</td>
-    `;
-    topTenFoot.appendChild(tableRow);
-}
-
-loadTopTen();
