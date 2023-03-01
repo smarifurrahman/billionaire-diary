@@ -36,4 +36,6 @@ const displayTotalTopTen = (total) => {
     topTenFoot.appendChild(tableRow);
 }
 
+document.getElementById()
+
 loadTopTen();

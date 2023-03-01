@@ -8,7 +8,7 @@
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/aae5e146e7.js" crossorigin="anonymous"></script>
     <!-- tailwind daisy ui -->
@@ -21,9 +21,11 @@
                     colors: {
                         primary: '#0E1B34',
                         secondary: '#D9D9D9',
+                        tertiary: '#F2F0F0',
                     },
                     fontFamily: {
                         primary: ['Inter', 'sans-serif'],
+                        secondary: ['Inknut Antiqua', 'serif'],
                     }
                 }
             }
@@ -33,33 +35,22 @@
 
 <body class="font-primary">
 
-    <header class="text-center text-primary py-8">
-        <h1 class="font-bold text-3xl">Richest by industry</h1>
-        <h3>(By Technology)</h3>
+    <header class="text-center text-primary p-8 bg-tertiary">
+        <div class="bg-[url('./images/logo/logo1.png')] bg-no-repeat bg-contain bg-right">
+            <h1 class="font-bold text-3xl font-secondary mb-2">Richest by industry</h1>
+            <h3>(By Technology)</h3>
+        </div>
     </header>
     <main>
         <section>
-            <div class="grid grid-cols-3 gap-6 bg-purple-500 py-10 px-6 text-white">
-                <div class="bg-slate-500 p-4">
-                    <h2 class="text-center font-bold text-xl mb-5">Jef Bezos</h2>
-                    <div class="flex">
-                        <div class="flex justify-center items-center mr-3 w-">
-                            <img class="w-full" src="./images/logo/logo1.png" alt="">
-                        </div>
-                        <div class="border-l-2 flex flex-col justify-center py-5 px-3 w-2/3">
-                            <p class="font-medium">Citizenship: <span class="font-light">United</span></p>
-                            <p class="font-medium">State: <span class="font-light">Washing</span></p>
-                            <p class="font-medium">City: <span class="font-light">Medina</span></p>
-                            <p class="font-medium">Total Shares: <span class="font-light">992634</span></p>
-                            <p class="font-medium">Share Price: <span class="font-light">$99.7</span></p>
-                        </div>
-                    </div>
-                    <p class="mt-3 font-medium">Source: <span class="font-light">Amazon</span></p>
-                </div>
+            <div id="card-container" class="grid grid-cols-3 gap-6 bg-secondary py-10 px-6 text-white">
+                
             </div>
         </section>
     </main>
 
+    <!-- js -->
+    <script src="./js/by-industry.js"></script>
 </body>
 
 </html>
