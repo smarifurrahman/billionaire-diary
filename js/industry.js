@@ -2,9 +2,12 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const first = urlParams.get('first');
 const second = urlParams.get('second');
+console.log(first, second)
 
 const loadByIndustry = async (first, second) => {
     const url = `https://forbes400.onrender.com/api/forbes400${first ? '/' + first : ''}${second ? '/' + second : ''}`;
+console.log(first, second)
+console.log(url)
     const res = await fetch(url);
     const data = await res.json();
     displayByIndustry(data);
@@ -37,7 +40,7 @@ const displayByIndustry = (persons) => {
     }
 }
 
-const displayHeading = (industry = '/forbes 400') => {
+const displayHeading = (industry = 'forbes 400') => {
     let industryName = industry.split('');
     industryName[0] = industryName[0].toUpperCase();
     industryName = industryName.join('');
