@@ -36,22 +36,26 @@
   <main class="font-primary">
     <section class="grid lg:grid-cols-5 w-full">
       <div id="control-panel" class="bg-primary lg:col-span-1 px-4 py-5">
-        <div class="flex flex-col items-center justify-center">
-          <img class="mb-10 mt-5 w-1/2" src="./images/logo/logo.svg" alt="">
-          <button id="btn-all-billionaire" class="bg-secondary text-primary font-bold py-2 px-2 w-5/6 mb-3">All
+        <img class="mb-10 mt-5 w-1/2 mx-auto" src="./images/logo/logo.svg" alt="">
+        <div id="all-button-container" class="flex flex-col items-center justify-center">
+          <button id="?first=getAllBillionaires" class="bg-secondary text-primary font-bold py-2 px-2 w-5/6 mb-3">All
             Billionaire</button>
-          <button id="btn-forbes-400" class="bg-secondary text-primary font-bold py-2 px-2 w-5/6 mb-3">Forbes
+          <button id="?" class="bg-secondary text-primary font-bold py-2 px-2 w-5/6 mb-3">Forbes
             400</button>
-          <button id="btn-youngest" class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Show
+          <button id="?first=youngest" class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Show
             Youngest</button>
-          <button id="btn-technology" class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Richest by
+          <button id="?first=industries&second=technology"
+            class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Richest by
             industry
             (Technology)</button>
-          <button id="btn-finance" class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Richest by industry
+          <button id="?first=industries&second=finance"
+            class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Richest by industry
             (Finance)</button>
-          <button id="btn-fashion" class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Richest by industry
+          <button id="?first=industries&second=fashion"
+            class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Richest by industry
             (Fashion)</button>
-          <button id="btn-investment" class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Richest by
+          <button id="?first=industries&second=investment"
+            class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Richest by
             industry
             (Investment)</button>
         </div>

@@ -36,39 +36,11 @@ const displayTotalTopTen = (total) => {
     topTenFoot.appendChild(tableRow);
 }
 
-document.getElementById('btn-technology').addEventListener('click', function () {
-    const url = '../industry.html?first=/industries&second=/technology';
-    window.location.href = url;
-});
-
-document.getElementById('btn-finance').addEventListener('click', function () {
-    const url = '../industry.html?first=/industries&second=/finance';
-    window.location.href = url;
-});
-
-document.getElementById('btn-fashion').addEventListener('click', function () {
-    const url = '../industry.html?first=/industries&second=/fashion';
-    window.location.href = url;
-});
-
-document.getElementById('btn-investment').addEventListener('click', function () {
-    const url = '../industry.html?first=/industries&second=/investment';
-    window.location.href = url;
-});
-
-document.getElementById('btn-youngest').addEventListener('click', function () {
-    const url = '../industry.html?first=/youngest';
-    window.location.href = url;
-});
-
-document.getElementById('btn-all-billionaire').addEventListener('click', function () {
-    const url = '../industry.html?first=/getAllBillionaires';
-    window.location.href = url;
-});
-
-document.getElementById('btn-forbes-400').addEventListener('click', function () {
-    const url = '../industry.html?';
-    window.location.href = url;
+document.getElementById('all-button-container').addEventListener('click', function (event) {
+    if (event.target.id !== 'all-button-container') {
+        const url = `../industry.html${event.target.id}`;
+        window.location.href = url;
+    }
 });
 
 loadTopTen();
