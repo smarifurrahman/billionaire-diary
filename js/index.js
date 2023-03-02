@@ -11,11 +11,11 @@ const displayTopTen = (persons) => {
     for (const person of persons) {
         const tableRow = document.createElement('tr');
         tableRow.innerHTML = `
-        <td class="pr-10 py-1"><i class="fa-solid fa-eye cursor-pointer p-1"></i> ${person.person.name}</td>
-        <td class="pr-10 py-1">${person.countryOfCitizenship}</td>
-        <td class="pr-10 py-1">${person.industries[0]}</td>
-        <td class="pr-10 py-1">${person.rank}</td>
-        <td class="pr-10 py-1 text-right">$${person.finalWorth.toFixed(2)}</td>
+        <td class="pr-6 lg:pr-10 py-1"><i class="fa-solid fa-eye cursor-pointer p-1"></i> ${person.person.name}</td>
+        <td class="pr-6 lg:pr-10 py-1">${person.countryOfCitizenship}</td>
+        <td class="pr-6 lg:pr-10 py-1">${person.industries[0]}</td>
+        <td class="pr-6 lg:pr-10 py-1">${person.rank}</td>
+        <td class="pr-6 lg:pr-10 py-1 text-right">$${person.finalWorth.toFixed(2)}</td>
         `;
         total += person.finalWorth;
         topTenBody.appendChild(tableRow);
@@ -27,32 +27,47 @@ const displayTotalTopTen = (total) => {
     const topTenFoot = document.getElementById('top-10-tfoot');
     const tableRow = document.createElement('tr');
     tableRow.innerHTML = `
-    <td class="pt-3 pr-10">Total</td>
-    <td class="pt-3 pr-10"></td>
-    <td class="pt-3 pr-10"></td>
-    <td class="pt-3 pr-10"></td>
-    <td class="pt-3 pr-10">$${total.toFixed(2)}</td>
+    <td class="pt-3 pr-6 lg:pr-10">Total</td>
+    <td class="pt-3 pr-6 lg:pr-10"></td>
+    <td class="pt-3 pr-6 lg:pr-10"></td>
+    <td class="pt-3 pr-6 lg:pr-10"></td>
+    <td class="pt-3">$${total.toFixed(2)}</td>
     `;
     topTenFoot.appendChild(tableRow);
 }
 
 document.getElementById('btn-technology').addEventListener('click', function () {
-    const url = '../industry.html?industry=technology';
+    const url = '../industry.html?first=/industries&second=/technology';
     window.location.href = url;
 });
 
 document.getElementById('btn-finance').addEventListener('click', function () {
-    const url = '../industry.html?industry=finance';
+    const url = '../industry.html?first=/industries&second=/finance';
     window.location.href = url;
 });
 
 document.getElementById('btn-fashion').addEventListener('click', function () {
-    const url = '../industry.html?industry=fashion';
+    const url = '../industry.html?first=/industries&second=/fashion';
     window.location.href = url;
 });
 
 document.getElementById('btn-investment').addEventListener('click', function () {
-    const url = '../industry.html?industry=investment';
+    const url = '../industry.html?first=/industries&second=/investment';
+    window.location.href = url;
+});
+
+document.getElementById('btn-youngest').addEventListener('click', function () {
+    const url = '../industry.html?first=/youngest';
+    window.location.href = url;
+});
+
+document.getElementById('btn-all-billionaire').addEventListener('click', function () {
+    const url = '../industry.html?first=/getAllBillionaires';
+    window.location.href = url;
+});
+
+document.getElementById('btn-forbes-400').addEventListener('click', function () {
+    const url = '../industry.html?';
     window.location.href = url;
 });
 

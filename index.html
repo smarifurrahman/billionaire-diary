@@ -34,38 +34,44 @@
 
 <body>
   <main class="font-primary">
-    <section class="flex w-full">
-      <div id="control-panel" class="bg-primary w-1/5 px-4 py-5">
+    <section class="grid lg:grid-cols-5 w-full">
+      <div id="control-panel" class="bg-primary lg:col-span-1 px-4 py-5">
         <div class="flex flex-col items-center justify-center">
           <img class="mb-10 mt-5 w-1/2" src="./images/logo/logo.svg" alt="">
-          <button class="bg-secondary text-primary font-bold py-2 px-2 w-5/6 mb-3">Top 20 Billionaires</button>
-          <button class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Show All Billionaires</button>
-          <button id="btn-technology" class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Richest by industry
+          <button id="btn-all-billionaire" class="bg-secondary text-primary font-bold py-2 px-2 w-5/6 mb-3">All
+            Billionaire</button>
+          <button id="btn-forbes-400" class="bg-secondary text-primary font-bold py-2 px-2 w-5/6 mb-3">Forbes
+            400</button>
+          <button id="btn-youngest" class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Show
+            Youngest</button>
+          <button id="btn-technology" class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Richest by
+            industry
             (Technology)</button>
           <button id="btn-finance" class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Richest by industry
             (Finance)</button>
           <button id="btn-fashion" class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Richest by industry
             (Fashion)</button>
-          <button id="btn-investment" class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Richest by industry
+          <button id="btn-investment" class="bg-secondary text-primary font-bold py-2 px-3 w-5/6 mb-3">Richest by
+            industry
             (Investment)</button>
         </div>
       </div>
-      <div id="top-10-panel" class="w-4/5">
+      <div id="top-10-panel" class="lg:col-span-4">
         <div>
-          <div class="text-primary px-8 py-6 bg-tertiary">
+          <div class="text-primary p-8 bg-tertiary">
             <div class="bg-[url('./images/logo/logo1.png')] bg-no-repeat bg-contain bg-right">
               <input class="py-1 w-32 border-b border-black bg-tertiary outline-none" type="text" placeholder="Search">
             </div>
           </div>
-          <div class="bg-secondary py-5 px-8">
+          <div class="bg-secondary p-8">
             <h2 class="font-bold mb-6">Top 10 Billionaires List !</h2>
             <table>
               <thead class="border-b-2 border-primary">
                 <tr>
-                  <th class="pb-3 pr-10">Person</th>
-                  <th class="pb-3 pr-10">Citizenship</th>
-                  <th class="pb-3 pr-10">Industry</th>
-                  <th class="pb-3 pr-10">Rank</th>
+                  <th class="pb-3 pr-6 lg:pr-10">Person</th>
+                  <th class="pb-3 pr-6 lg:pr-10">Citizenship</th>
+                  <th class="pb-3 pr-6 lg:pr-10">Industry</th>
+                  <th class="pb-3 pr-6 lg:pr-10">Rank</th>
                   <th class="pb-3 ">Wealth</th>
                 </tr>
               </thead>

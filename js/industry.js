@@ -1,9 +1,10 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const industry = urlParams.get('industry');
+const first = urlParams.get('first');
+const second = urlParams.get('second');
 
-const loadByIndustry = async (industry) => {
-    const url = `https://forbes400.onrender.com/api/forbes400/industries/${industry}`;
+const loadByIndustry = async (first = '', second = '') => {
+    const url = `https://forbes400.onrender.com/api/forbes400${first}${second}`;
     const res = await fetch(url);
     const data = await res.json();
     displayByIndustry(data);
@@ -22,6 +23,7 @@ const displayByIndustry = (persons) => {
                 <img class="w-full" src="${person.person.squareImage ? person.person.squareImage : emptyString}" alt="Not Found">
             </div>
             <div class="border-l-2 flex flex-col justify-center py-5 px-3 w-1/2">
+                <p class="font-semibold">Rank: <span class="font-light">${person.rank ? person.rank : 'Not Found'}</span></p>
                 <p class="font-semibold">Citizenship: <span class="font-light">${person.countryOfCitizenship ? person.countryOfCitizenship : 'Not Found'}</span></p>
                 <p class="font-semibold">State: <span class="font-light">${person.state ? person.state : 'Not Found'}</span></p>
                 <p class="font-semibold">City: <span class="font-light">${person.city ? person.city : 'Not Found'}</span></p>
@@ -35,13 +37,25 @@ const displayByIndustry = (persons) => {
     }
 }
 
-const displayHeading = (industry) => {
+const displayHeading = (industry = '/forbes 400') => {
     let industryName = industry.split('');
+    industryName.shift();
     industryName[0] = industryName[0].toUpperCase();
     industryName = industryName.join('');
     document.getElementById('industry-name').innerText = industryName;
 }
 
-displayHeading(industry);
+if (second) {
+    displayHeading(second);
+    loadByIndustry(first, second);
+}
 
-loadByIndustry(industry);
+else if (first) {
+    displayHeading(first);
+    loadByIndustry(first);
+}
+
+else {
+    displayHeading();
+    loadByIndustry();
+}
